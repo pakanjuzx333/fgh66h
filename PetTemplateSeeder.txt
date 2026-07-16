@@ -1,0 +1,569 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class PetTemplateSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $petTemplates = [
+            // Shadow Category
+            [
+                'name' => 'Shadow Wolf',
+                'category' => 'shadow',
+                'rarity' => 'common',
+                'description' => 'A mysterious wolf that emerges from the shadows, loyal to those who show it kindness.',
+                'image_url' => '/images/pets/shadow/shadow_wolf.png',
+                'animation_url' => '/images/pets/shadow/shadow_wolf_anim.gif',
+                'coin_cost' => 1000,
+                'gem_cost' => 10,
+                'prize_tree_unlock_level' => 5,
+                'mystery_box_unlocks' => json_encode(['common_shadow']),
+                'collectible_reward_id' => 'shadow_essence',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/shadow/shadow_wolf_evo1.png',
+                    '/images/pets/shadow/shadow_wolf_evo2.png',
+                    '/images/pets/shadow/shadow_wolf_evo3.png',
+                    '/images/pets/shadow/shadow_wolf_evo4.png'
+                ]),
+                'sort_order' => 1
+            ],
+            [
+                'name' => 'Dark Raven',
+                'category' => 'shadow',
+                'rarity' => 'rare',
+                'description' => 'An intelligent raven with eyes that gleam like obsidian, harboring ancient secrets.',
+                'image_url' => '/images/pets/shadow/dark_raven.png',
+                'animation_url' => '/images/pets/shadow/dark_raven_anim.gif',
+                'coin_cost' => 5000,
+                'gem_cost' => 50,
+                'prize_tree_unlock_level' => 15,
+                'mystery_box_unlocks' => json_encode(['rare_shadow']),
+                'collectible_reward_id' => 'raven_feather',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/shadow/dark_raven_evo1.png',
+                    '/images/pets/shadow/dark_raven_evo2.png',
+                    '/images/pets/shadow/dark_raven_evo3.png',
+                    '/images/pets/shadow/dark_raven_evo4.png'
+                ]),
+                'sort_order' => 2
+            ],
+            [
+                'name' => 'Void Stalker',
+                'category' => 'shadow',
+                'rarity' => 'epic',
+                'description' => 'A creature born from the void itself, capable of bending shadows to its will.',
+                'image_url' => '/images/pets/shadow/void_stalker.png',
+                'animation_url' => '/images/pets/shadow/void_stalker_anim.gif',
+                'coin_cost' => 25000,
+                'gem_cost' => 200,
+                'prize_tree_unlock_level' => 30,
+                'mystery_box_unlocks' => json_encode(['epic_shadow']),
+                'collectible_reward_id' => 'void_crystal',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/shadow/void_stalker_evo1.png',
+                    '/images/pets/shadow/void_stalker_evo2.png',
+                    '/images/pets/shadow/void_stalker_evo3.png',
+                    '/images/pets/shadow/void_stalker_evo4.png'
+                ]),
+                'sort_order' => 3
+            ],
+
+            [
+               'name' => 'Shadow Lord',
+               'category' => 'shadow',
+               'rarity' => 'legendary',
+               'description' => 'The master of all shadows, commanding respect from lesser dark creatures.',
+               'image_url' => '/images/pets/shadow/shadow_lord.png',
+               'animation_url' => '/images/pets/shadow/shadow_lord_anim.gif',
+               'coin_cost' => 100000,
+               'gem_cost' => 800,
+               'prize_tree_unlock_level' => 50,
+               'mystery_box_unlocks' => json_encode(['legendary_shadow']),
+               'collectible_reward_id' => 'shadow_crown',
+               'evolution_levels' => json_encode([10, 25, 50, 100]),
+               'evolution_images' => json_encode([
+                   '/images/pets/shadow/shadow_lord_evo1.png',
+                   '/images/pets/shadow/shadow_lord_evo2.png',
+                   '/images/pets/shadow/shadow_lord_evo3.png',
+                   '/images/pets/shadow/shadow_lord_evo4.png'
+               ]),
+               'sort_order' => 4
+           ],
+           [
+               'name' => 'Nightmare King',
+               'category' => 'shadow',
+               'rarity' => 'mythic',
+               'description' => 'The ultimate shadow entity, ruler of nightmares and master of the dark realm.',
+               'image_url' => '/images/pets/shadow/nightmare_king.png',
+               'animation_url' => '/images/pets/shadow/nightmare_king_anim.gif',
+               'coin_cost' => 500000,
+               'gem_cost' => 3000,
+               'prize_tree_unlock_level' => 75,
+               'is_premium_only' => true,
+               'mystery_box_unlocks' => json_encode(['mythic_shadow']),
+               'collectible_reward_id' => 'nightmare_scroll',
+               'evolution_levels' => json_encode([10, 25, 50, 100]),
+               'evolution_images' => json_encode([
+                   '/images/pets/shadow/nightmare_king_evo1.png',
+                   '/images/pets/shadow/nightmare_king_evo2.png',
+                   '/images/pets/shadow/nightmare_king_evo3.png',
+                   '/images/pets/shadow/nightmare_king_evo4.png'
+               ]),
+               'sort_order' => 5
+           ],
+
+            // Undead Category
+            [
+                'name' => 'Skeleton Minion',
+                'category' => 'undead',
+                'rarity' => 'common',
+                'description' => 'A loyal skeletal servant, animated by dark magic and bound to serve.',
+                'image_url' => '/images/pets/undead/skeleton_minion.png',
+                'animation_url' => '/images/pets/undead/skeleton_minion_anim.gif',
+                'coin_cost' => 1000,
+                'gem_cost' => 10,
+                'prize_tree_unlock_level' => 5,
+                'mystery_box_unlocks' => json_encode(['common_undead']),
+                'collectible_reward_id' => 'bone_fragment',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/undead/skeleton_minion_evo1.png',
+                    '/images/pets/undead/skeleton_minion_evo2.png',
+                    '/images/pets/undead/skeleton_minion_evo3.png',
+                    '/images/pets/undead/skeleton_minion_evo4.png'
+                ]),
+                'sort_order' => 6
+            ],
+            [
+                'name' => 'Zombie Hound',
+                'category' => 'undead',
+                'rarity' => 'rare',
+                'description' => 'A reanimated hound with an insatiable hunger and unwavering loyalty.',
+                'image_url' => '/images/pets/undead/zombie_hound.png',
+                'animation_url' => '/images/pets/undead/zombie_hound_anim.gif',
+                'coin_cost' => 5000,
+                'gem_cost' => 50,
+                'prize_tree_unlock_level' => 15,
+                'mystery_box_unlocks' => json_encode(['rare_undead']),
+                'collectible_reward_id' => 'decay_potion',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/undead/zombie_hound_evo1.png',
+                    '/images/pets/undead/zombie_hound_evo2.png',
+                    '/images/pets/undead/zombie_hound_evo3.png',
+                    '/images/pets/undead/zombie_hound_evo4.png'
+                ]),
+                'sort_order' => 7
+            ],
+            [
+               'name' => 'Lich Apprentice',
+               'category' => 'undead',
+               'rarity' => 'epic',
+               'description' => 'A young lich learning the dark arts of necromancy and undeath.',
+               'image_url' => '/images/pets/undead/lich_apprentice.png',
+               'animation_url' => '/images/pets/undead/lich_apprentice_anim.gif',
+               'coin_cost' => 25000,
+               'gem_cost' => 200,
+               'prize_tree_unlock_level' => 30,
+               'mystery_box_unlocks' => json_encode(['epic_undead']),
+               'collectible_reward_id' => 'necromancy_tome',
+               'evolution_levels' => json_encode([10, 25, 50, 100]),
+               'evolution_images' => json_encode([
+                   '/images/pets/undead/lich_apprentice_evo1.png',
+                   '/images/pets/undead/lich_apprentice_evo2.png',
+                   '/images/pets/undead/lich_apprentice_evo3.png',
+                   '/images/pets/undead/lich_apprentice_evo4.png'
+               ]),
+               'sort_order' => 8
+           ],
+            [
+                'name' => 'Death Knight',
+                'category' => 'undead',
+                'rarity' => 'legendary',
+                'description' => 'A fallen paladin risen as an undead champion of darkness.',
+                'image_url' => '/images/pets/undead/death_knight.png',
+                'animation_url' => '/images/pets/undead/death_knight_anim.gif',
+                'coin_cost' => 100000,
+                'gem_cost' => 800,
+                'prize_tree_unlock_level' => 50,
+                'mystery_box_unlocks' => json_encode(['legendary_undead']),
+                'collectible_reward_id' => 'deaths_blade',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/undead/death_knight_evo1.png',
+                    '/images/pets/undead/death_knight_evo2.png',
+                    '/images/pets/undead/death_knight_evo3.png',
+                    '/images/pets/undead/death_knight_evo4.png'
+                ]),
+                'sort_order' => 9
+            ],
+           [
+               'name' => 'Bone Dragon',
+               'category' => 'undead',
+               'rarity' => 'mythic',
+               'description' => 'An ancient dragon reborn as an undead monstrosity of immense power.',
+               'image_url' => '/images/pets/undead/bone_dragon.png',
+               'animation_url' => '/images/pets/undead/bone_dragon_anim.gif',
+               'coin_cost' => 500000,
+               'gem_cost' => 3000,
+               'prize_tree_unlock_level' => 75,
+               'is_premium_only' => true,
+               'mystery_box_unlocks' => json_encode(['mythic_undead']),
+               'collectible_reward_id' => 'dragon_soul_scroll',
+               'evolution_levels' => json_encode([10, 25, 50, 100]),
+               'evolution_images' => json_encode([
+                   '/images/pets/undead/bone_dragon_evo1.png',
+                   '/images/pets/undead/bone_dragon_evo2.png',
+                   '/images/pets/undead/bone_dragon_evo3.png',
+                   '/images/pets/undead/bone_dragon_evo4.png'
+               ]),
+               'sort_order' => 10
+           ],
+
+            // Demon Category
+            [
+                'name' => 'Imp Familiar',
+                'category' => 'demon',
+                'rarity' => 'common',
+                'description' => 'A mischievous imp that delights in causing minor chaos and mayhem.',
+                'image_url' => '/images/pets/demon/imp_familiar.png',
+                'animation_url' => '/images/pets/demon/imp_familiar_anim.gif',
+                'coin_cost' => 1000,
+                'gem_cost' => 10,
+                'prize_tree_unlock_level' => 5,
+                'mystery_box_unlocks' => json_encode(['common_demon']),
+                'collectible_reward_id' => 'demon_horn',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/demon/imp_familiar_evo1.png',
+                    '/images/pets/demon/imp_familiar_evo2.png',
+                    '/images/pets/demon/imp_familiar_evo3.png',
+                    '/images/pets/demon/imp_familiar_evo4.png'
+                ]),
+                'sort_order' => 11
+            ],
+            [
+                'name' => 'Hellhound Pup',
+                'category' => 'demon',
+                'rarity' => 'rare',
+                'description' => 'A young hellhound with flames flickering in its eyes and burning paws.',
+                'image_url' => '/images/pets/demon/hellhound_pup.png',
+                'animation_url' => '/images/pets/demon/hellhound_pup_anim.gif',
+                'coin_cost' => 5000,
+                'gem_cost' => 50,
+                'prize_tree_unlock_level' => 15,
+                'mystery_box_unlocks' => json_encode(['rare_demon']),
+                'collectible_reward_id' => 'infernal_collar',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/demon/hellhound_pup_evo1.png',
+                    '/images/pets/demon/hellhound_pup_evo2.png',
+                    '/images/pets/demon/hellhound_pup_evo3.png',
+                    '/images/pets/demon/hellhound_pup_evo4.png'
+                ]),
+                'sort_order' => 12
+            ],
+            [
+                'name' => 'Succubus',
+                'category' => 'demon',
+                'rarity' => 'epic',
+                'description' => 'A seductive demon with the power to charm and manipulate mortal minds.',
+                'image_url' => '/images/pets/demon/succubus.png',
+                'animation_url' => '/images/pets/demon/succubus_anim.gif',
+                'coin_cost' => 25000,
+                'gem_cost' => 200,
+                'prize_tree_unlock_level' => 30,
+                'mystery_box_unlocks' => json_encode(['epic_demon']),
+                'collectible_reward_id' => 'charm_amulet',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/demon/succubus_evo1.png',
+                    '/images/pets/demon/succubus_evo2.png',
+                    '/images/pets/demon/succubus_evo3.png',
+                    '/images/pets/demon/succubus_evo4.png'
+                ]),
+                'sort_order' => 13
+            ],
+            [
+                'name' => 'Pit Lord',
+                'category' => 'demon',
+                'rarity' => 'legendary',
+                'description' => 'A towering demon commander who leads infernal legions into battle.',
+                'image_url' => '/images/pets/demon/pit_lord.png',
+                'animation_url' => '/images/pets/demon/pit_lord_anim.gif',
+                'coin_cost' => 100000,
+                'gem_cost' => 800,
+                'prize_tree_unlock_level' => 50,
+                'mystery_box_unlocks' => json_encode(['legendary_demon']),
+                'collectible_reward_id' => 'infernal_blade',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/demon/pit_lord_evo1.png',
+                    '/images/pets/demon/pit_lord_evo2.png',
+                    '/images/pets/demon/pit_lord_evo3.png',
+                    '/images/pets/demon/pit_lord_evo4.png'
+                ]),
+                'sort_order' => 14
+            ],
+            [
+                'name' => 'Archfiend',
+                'category' => 'demon',
+                'rarity' => 'mythic',
+                'description' => 'The supreme demon lord, wielding apocalyptic power from the deepest abyss.',
+                'image_url' => '/images/pets/demon/archfiend.png',
+                'animation_url' => '/images/pets/demon/archfiend_anim.gif',
+                'coin_cost' => 500000,
+                'gem_cost' => 3000,
+                'prize_tree_unlock_level' => 75,
+                'is_premium_only' => true,
+                'mystery_box_unlocks' => json_encode(['mythic_demon']),
+                'collectible_reward_id' => 'demon_throne_scroll',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/demon/archfiend_evo1.png',
+                    '/images/pets/demon/archfiend_evo2.png',
+                    '/images/pets/demon/archfiend_evo3.png',
+                    '/images/pets/demon/archfiend_evo4.png'
+                ]),
+                'sort_order' => 15
+            ],
+
+            // Spirit Category
+            [
+                'name' => 'Wisp',
+                'category' => 'spirit',
+                'rarity' => 'common',
+                'description' => 'A gentle floating light that guides lost souls through the darkness.',
+                'image_url' => '/images/pets/spirit/wisp.png',
+                'animation_url' => '/images/pets/spirit/wisp_anim.gif',
+                'coin_cost' => 1000,
+                'gem_cost' => 10,
+                'prize_tree_unlock_level' => 5,
+                'mystery_box_unlocks' => json_encode(['common_spirit']),
+                'collectible_reward_id' => 'spirit_essence',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/spirit/wisp_evo1.png',
+                    '/images/pets/spirit/wisp_evo2.png',
+                    '/images/pets/spirit/wisp_evo3.png',
+                    '/images/pets/spirit/wisp_evo4.png'
+                ]),
+                'sort_order' => 16
+            ],
+            [
+                'name' => 'Phantom Cat',
+                'category' => 'spirit',
+                'rarity' => 'rare',
+                'description' => 'An ethereal feline that phases between the material and spirit realms.',
+                'image_url' => '/images/pets/spirit/phantom_cat.png',
+                'animation_url' => '/images/pets/spirit/phantom_cat_anim.gif',
+                'coin_cost' => 5000,
+                'gem_cost' => 50,
+                'prize_tree_unlock_level' => 15,
+                'mystery_box_unlocks' => json_encode(['rare_spirit']),
+                'collectible_reward_id' => 'ethereal_bell',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/spirit/phantom_cat_evo1.png',
+                    '/images/pets/spirit/phantom_cat_evo2.png',
+                    '/images/pets/spirit/phantom_cat_evo3.png',
+                    '/images/pets/spirit/phantom_cat_evo4.png'
+                ]),
+                'sort_order' => 17
+            ],
+            [
+                'name' => 'Banshee',
+                'category' => 'spirit',
+                'rarity' => 'epic',
+                'description' => 'A wailing spirit whose haunting cry foretells doom and misfortune.',
+                'image_url' => '/images/pets/spirit/banshee.png',
+                'animation_url' => '/images/pets/spirit/banshee_anim.gif',
+                'coin_cost' => 25000,
+                'gem_cost' => 200,
+                'prize_tree_unlock_level' => 30,
+                'mystery_box_unlocks' => json_encode(['epic_spirit']),
+                'collectible_reward_id' => 'wailing_veil',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/spirit/banshee_evo1.png',
+                    '/images/pets/spirit/banshee_evo2.png',
+                    '/images/pets/spirit/banshee_evo3.png',
+                    '/images/pets/spirit/banshee_evo4.png'
+                ]),
+                'sort_order' => 18
+            ],
+            [
+                'name' => 'Celestial Guardian',
+                'category' => 'spirit',
+                'rarity' => 'legendary',
+                'description' => 'A divine protector spirit blessed with holy light and ancient wisdom.',
+                'image_url' => '/images/pets/spirit/celestial_guardian.png',
+                'animation_url' => '/images/pets/spirit/celestial_guardian_anim.gif',
+                'coin_cost' => 100000,
+                'gem_cost' => 800,
+                'prize_tree_unlock_level' => 50,
+                'mystery_box_unlocks' => json_encode(['legendary_spirit']),
+                'collectible_reward_id' => 'divine_halo',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/spirit/celestial_guardian_evo1.png',
+                    '/images/pets/spirit/celestial_guardian_evo2.png',
+                    '/images/pets/spirit/celestial_guardian_evo3.png',
+                    '/images/pets/spirit/celestial_guardian_evo4.png'
+                ]),
+                'sort_order' => 19
+            ],
+            [
+                'name' => 'Phoenix Spirit',
+                'category' => 'spirit',
+                'rarity' => 'mythic',
+                'description' => 'An immortal spirit of rebirth, eternally cycling through death and resurrection.',
+                'image_url' => '/images/pets/spirit/phoenix_spirit.png',
+                'animation_url' => '/images/pets/spirit/phoenix_spirit_anim.gif',
+                'coin_cost' => 500000,
+                'gem_cost' => 3000,
+                'prize_tree_unlock_level' => 75,
+                'is_premium_only' => true,
+                'mystery_box_unlocks' => json_encode(['mythic_spirit']),
+                'collectible_reward_id' => 'rebirth_scroll',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/spirit/phoenix_spirit_evo1.png',
+                    '/images/pets/spirit/phoenix_spirit_evo2.png',
+                    '/images/pets/spirit/phoenix_spirit_evo3.png',
+                    '/images/pets/spirit/phoenix_spirit_evo4.png'
+                ]),
+                'sort_order' => 20
+            ],
+
+            // Beast Category
+            [
+                'name' => 'Dire Wolf Cub',
+                'category' => 'beast',
+                'rarity' => 'common',
+                'description' => 'A young dire wolf with fierce eyes and untamed spirit, ready to grow strong.',
+                'image_url' => '/images/pets/beast/dire_wolf_cub.png',
+                'animation_url' => '/images/pets/beast/dire_wolf_cub_anim.gif',
+                'coin_cost' => 1000,
+                'gem_cost' => 10,
+                'prize_tree_unlock_level' => 5,
+                'mystery_box_unlocks' => json_encode(['common_beast']),
+                'collectible_reward_id' => 'wolf_fang',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/beast/dire_wolf_cub_evo1.png',
+                    '/images/pets/beast/dire_wolf_cub_evo2.png',
+                    '/images/pets/beast/dire_wolf_cub_evo3.png',
+                    '/images/pets/beast/dire_wolf_cub_evo4.png'
+                ]),
+                'sort_order' => 21
+            ],
+            [
+                'name' => 'Saber Tiger',
+                'category' => 'beast',
+                'rarity' => 'rare',
+                'description' => 'A prehistoric predator with razor-sharp fangs and lightning-fast reflexes.',
+                'image_url' => '/images/pets/beast/saber_tiger.png',
+                'animation_url' => '/images/pets/beast/saber_tiger_anim.gif',
+                'coin_cost' => 5000,
+                'gem_cost' => 50,
+                'prize_tree_unlock_level' => 15,
+                'mystery_box_unlocks' => json_encode(['rare_beast']),
+                'collectible_reward_id' => 'saber_tooth',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/beast/saber_tiger_evo1.png',
+                    '/images/pets/beast/saber_tiger_evo2.png',
+                    '/images/pets/beast/saber_tiger_evo3.png',
+                    '/images/pets/beast/saber_tiger_evo4.png'
+                ]),
+                'sort_order' => 22
+            ],
+            [
+                'name' => 'Chimera',
+                'category' => 'beast',
+                'rarity' => 'epic',
+                'description' => 'A mythical beast with the head of a lion, body of a goat, and tail of a serpent.',
+                'image_url' => '/images/pets/beast/chimera.png',
+                'animation_url' => '/images/pets/beast/chimera_anim.gif',
+                'coin_cost' => 25000,
+                'gem_cost' => 200,
+                'prize_tree_unlock_level' => 30,
+                'mystery_box_unlocks' => json_encode(['epic_beast']),
+                'collectible_reward_id' => 'chimera_scale',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/beast/chimera_evo1.png',
+                    '/images/pets/beast/chimera_evo2.png',
+                    '/images/pets/beast/chimera_evo3.png',
+                    '/images/pets/beast/chimera_evo4.png'
+                ]),
+                'sort_order' => 23
+            ],
+            [
+                'name' => 'Behemoth',
+                'category' => 'beast',
+                'rarity' => 'legendary',
+                'description' => 'A colossal beast of legend, possessing earth-shaking strength and primal fury.',
+                'image_url' => '/images/pets/beast/behemoth.png',
+                'animation_url' => '/images/pets/beast/behemoth_anim.gif',
+                'coin_cost' => 100000,
+                'gem_cost' => 800,
+                'prize_tree_unlock_level' => 50,
+                'mystery_box_unlocks' => json_encode(['legendary_beast']),
+                'collectible_reward_id' => 'behemoth_horn',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/beast/behemoth_evo1.png',
+                    '/images/pets/beast/behemoth_evo2.png',
+                    '/images/pets/beast/behemoth_evo3.png',
+                    '/images/pets/beast/behemoth_evo4.png'
+                ]),
+                'sort_order' => 24
+            ],
+            [
+                'name' => 'Primordial Hydra',
+                'category' => 'beast',
+                'rarity' => 'mythic',
+                'description' => 'The ultimate beast, a multi-headed serpent from the dawn of time with regenerative powers.',
+                'image_url' => '/images/pets/beast/primordial_hydra.png',
+                'animation_url' => '/images/pets/beast/primordial_hydra_anim.gif',
+                'coin_cost' => 500000,
+                'gem_cost' => 3000,
+                'prize_tree_unlock_level' => 75,
+                'is_premium_only' => true,
+                'mystery_box_unlocks' => json_encode(['mythic_beast']),
+                'collectible_reward_id' => 'hydra_heart_scroll',
+                'evolution_levels' => json_encode([10, 25, 50, 100]),
+                'evolution_images' => json_encode([
+                    '/images/pets/beast/primordial_hydra_evo1.png',
+                    '/images/pets/beast/primordial_hydra_evo2.png',
+                    '/images/pets/beast/primordial_hydra_evo3.png',
+                    '/images/pets/beast/primordial_hydra_evo4.png'
+                ]),
+                'sort_order' => 25
+            ]
+        ];
+
+        foreach ($petTemplates as $template) {
+            DB::table('pet_templates')->updateOrInsert(
+                ['name' => $template['name']],
+                array_merge($template, [
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ])
+            );
+        }
+    }
+}
