@@ -1,0 +1,22 @@
+[Unit]
+Description=Telegram AI Community Manager
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=botuser
+Group=botuser
+WorkingDirectory=/opt/telegram-ai-manager
+EnvironmentFile=/opt/telegram-ai-manager/.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/telegram-ai-manager/.venv/bin/python -m src.main
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
